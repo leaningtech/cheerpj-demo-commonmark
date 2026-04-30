@@ -1,0 +1,224 @@
+:root {
+	color-scheme: light;
+
+	/* Layout */
+	--pad: 18px;
+	--max: 920px;
+
+	/* Typography */
+	--font: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+	--mono:
+		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+
+	/* Colors */
+	--fg: #0b1220;
+	--muted: #475569;
+	--bg: #ffffff;
+	--link: #2563eb;
+
+	--surface: #f7f9fc;
+	--border: #e6eaf2;
+
+	/* Radius */
+	--r-sm: 8px;
+	--r-md: 12px;
+
+	/* CheerpJ accent */
+	--accent: #ff8a00;
+	--accent-soft: rgba(255, 138, 0, 0.16);
+	--shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: var(--font);
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding: var(--pad);
+}
+
+/* Keep the preview readable on wide screens */
+body > * {
+	max-width: var(--max);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+	margin: 1.05em 0 0.4em;
+	letter-spacing: -0.01em;
+}
+
+h1 {
+	font-size: 1.7em;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin-top: 0.25em;
+}
+
+h1 img {
+	height: 44px;
+	width: auto;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
+h2 {
+	font-size: 1.35em;
+	margin-top: 1.25em;
+}
+
+h3 {
+	font-size: 1.15em;
+	margin-top: 1.05em;
+}
+
+p {
+	margin: 0.65em 0;
+}
+
+small {
+	color: var(--muted);
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px;
+}
+
+/* Lists */
+ul,
+ol {
+	margin: 0.65em 0;
+	padding-left: 1.25em;
+}
+
+li {
+	margin: 0.35em 0;
+}
+
+li > p {
+	margin: 0.35em 0;
+}
+
+/* Code */
+code,
+pre,
+kbd {
+	font-family: var(--mono);
+	font-size: 0.95em;
+}
+
+code {
+	background: rgba(15, 23, 42, 0.03);
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	padding: 0.12em 0.38em;
+	border-radius: var(--r-sm);
+}
+
+pre {
+	background: #f8fafc;
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	padding: 14px 16px;
+	border-radius: var(--r-md);
+	overflow: auto;
+	line-height: 1.45;
+	box-shadow: var(--shadow);
+}
+
+/* Ensure code blocks don't double-style */
+pre code {
+	background: transparent;
+	border: none;
+	padding: 0;
+	border-radius: 0;
+}
+
+/* Quotes */
+blockquote {
+	margin: 0.9em 0;
+	padding: 10px 12px;
+	border-left: 4px solid var(--accent);
+	background: rgba(255, 138, 0, 0.06);
+	border-radius: 10px;
+	color: #334155;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	margin: 0.9em 0;
+	width: 100%;
+}
+
+th,
+td {
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	padding: 7px 10px;
+	vertical-align: top;
+}
+
+th {
+	background: rgba(255, 138, 0, 0.08);
+	text-align: left;
+}
+
+/* Images */
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--r-md);
+	vertical-align: middle;
+}
+
+/* Tighten paragraphs that start with images */
+p > img {
+	margin-right: 8px;
+}
+
+p:has(> img:first-child) {
+	margin-top: 0.5em;
+}
+
+/* Horizontal rule as section divider */
+hr {
+	border: 0;
+	border-top: 1px solid rgba(15, 23, 42, 0.1);
+	margin: 18px 0 22px;
+}
+
+/* Subtle selection */
+::selection {
+	background: rgba(255, 138, 0, 0.18);
+}
