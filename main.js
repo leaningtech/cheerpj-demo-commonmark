@@ -63,7 +63,7 @@ function defaultMarkdown() {
 		"**Java is running as a computation library inside the browser.**  \n" +
 		"**JavaScript owns the UI.**\n\n" +
 		"![CheerJ Logo](./assets/cheerpj-core-logo.png) " +
-		"Click [here](https://cheerpj.com/) to get to know more about CheerpJ.\n\n" +
+		"Click <a href=\"https://cheerpj.com/\" target=\"_blank\" rel=\"noopener noreferrer\">here</a> to get to know more about CheerpJ.\n\n" +
 		"## Try these edits\n\n" +
 		"1) Change headings, lists, emphasis, and code blocks " +
 		"(**Bold**, _italic_, `inline code`)\n" +
@@ -72,7 +72,7 @@ function defaultMarkdown() {
 		"```java\n" +
 		"// Java runs in your browser (CheerpJ).\n" +
 		"// CommonMark is used purely as a library.\n" +
-		'System.out.println("Markdown to HTML in Java 17, UI in JavaScript");\n' +
+		'System.out.println("Markdown to HTML in Java 25, UI in JavaScript");\n' +
 		"```\n"
 	);
 }
@@ -106,7 +106,7 @@ async function init() {
 	setSideVisible(true);
 
 	setStatus("Starting CheerpJ…", { busy: true });
-	await cheerpjInit({ version: 17 });
+	await cheerpjInit({ version: 25 });
 
 	// fetch + add jar into /str at startup
 	await loadJarIntoStrVfs();
